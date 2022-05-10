@@ -21,7 +21,7 @@ void game() {
 	//printboard(mineboard, ROW, COLUMN);
 	//°²·ÅÀ×
 	mineset(mineboard, ROW, COLUMN);
-	displayboard(mineboard, ROW, COLUMN);
+	//displayboard(mineboard, ROW, COLUMN);
 	displayboard(mineshow, ROW, COLUMN);
 	//ÅÅÀ×
 	mine_mov(mineboard, mineshow, ROW, COLUMN);

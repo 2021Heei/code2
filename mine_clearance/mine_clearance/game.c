@@ -22,7 +22,7 @@ void initboard(char mineboard[ROWS][COLUMNS], int row, int column, char ch) {
 
 //打印棋盘
 void displayboard(char board[ROWS][COLUMNS], int row, int column) {
-	printf("------------------\n");
+	printf("------------------------------\n");
 	int i = 0;
 	for (i = 0; i <= row; i++) {
 		printf("%2d ", i);
@@ -37,7 +37,7 @@ void displayboard(char board[ROWS][COLUMNS], int row, int column) {
 		}
 		printf("\n");
 	}
-	printf("------------------\n");
+	printf("+++------------------------+++\n");
 }
 
 //安放雷
@@ -187,7 +187,7 @@ void mine_mov(char mineboard[ROWS][COLUMNS], char mineshow[ROWS][COLUMNS], int r
 
 	while (1) {
 		int count_mine = 0;
-		printf("请输入坐标>");
+		printf("请输入排查坐标>");
 		scanf("%d%d", &x, &y);
 		//判断是否合法(有效范围)
 		if (x >= 1 && x <= row && y >= 1 && y <= column) {

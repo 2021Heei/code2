@@ -1,5 +1,4 @@
-﻿  1.c
-  game.c
-  test.c
-  正在生成代码...
+﻿  game.c
+C:\C语言\codepush\code-path-2\mine_clearance\mine_clearance\game.c(184,20): warning C4028: 形参 1 与声明不同
+C:\C语言\codepush\code-path-2\mine_clearance\mine_clearance\game.c(184,51): warning C4028: 形参 2 与声明不同
   mine_clearance.vcxproj -> C:\C语言\codepush\code-path-2\mine_clearance\Debug\mine_clearance.exe
