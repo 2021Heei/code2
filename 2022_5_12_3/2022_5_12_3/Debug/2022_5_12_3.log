@@ -1,0 +1,3 @@
+﻿  test.c
+C:\C语言\codepush\code-path-2\2022_5_12_3\2022_5_12_3\test.c(86,5): error C2084: 函数“int main()”已有主体
+C:\C语言\codepush\code-path-2\2022_5_12_3\2022_5_12_3\test.c(6): message : 参见“main”的前一个定义
