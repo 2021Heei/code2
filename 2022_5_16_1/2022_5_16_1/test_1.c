@@ -12,7 +12,7 @@ int main() {
 
 	return 0;
 }
-//×Ö·û´®ÄæĞò
+//å­—ç¬¦ä¸²é€†åº
 void reverse_string(char* string) {
 	char t = *string;
 	int len = my_strlen(string);
@@ -34,63 +34,63 @@ int my_strlen(char* str) {
 	}
 }
 
-//Ñ­»·ÊµÏÖ
-//#include <stdio.h>
-//#include <stdio.h>
-//
-//void reverse_str(char* str, int left, int right);
-//
-//int main() {
-//	char str[] = "abcdefg";
-//	int left = 0;
-//	int right = strlen(str) - 1;
-//
-//	reverse_str(str, left, right);
-//	puts(str);
-//
-//	return 0;
-//}
-////
-//void reverse_str(char* str, int left, int right) {
-//	while (left < right) {
-//		char t = str[left];
-//		str[left] = str[right];
-//		str[right] = t;
-//		left++;
-//		right--;
-//	}
-//}
+å¾ªç¯å®ç°
+#include <stdio.h>
+#include <stdio.h>
 
-////µİ¹éÊµÏÖ
-//#include <stdio.h>
+void reverse_str(char* str, int left, int right);
+
+int main() {
+	char str[] = "abcdefg";
+	int left = 0;
+	int right = strlen(str) - 1;
+
+	reverse_str(str, left, right);
+	puts(str);
+
+	return 0;
+}
 //
-//void reverse_str(char* str, int left, int right);
-//int my_strlen(char* str);
+void reverse_str(char* str, int left, int right) {
+	while (left < right) {
+		char t = str[left];
+		str[left] = str[right];
+		str[right] = t;
+		left++;
+		right--;
+	}
+}
+
+//é€’å½’å®ç°
+#include <stdio.h>
+
+void reverse_str(char* str, int left, int right);
+int my_strlen(char* str);
+
+int main() {
+	char str[] = "abcdefg";
+	int left = 0;
+	int right = my_strlen(str) - 1;
+
+	reverse_str(str, left, right);
+
+	printf("%s\n", str);
+	return 0;
+}
+void reverse_str(char* str, int left, int right) {
+	if (left < right) {
+		char t = str[left];
+		str[left] = str[right];
+		str[right] = t;
+		reverse_str(str, left + 1, right - 1);
+	}
+}
 //
-//int main() {
-//	char str[] = "abcdefg";
-//	int left = 0;
-//	int right = my_strlen(str) - 1;
-//
-//	reverse_str(str, left, right);
-//
-//	printf("%s\n", str);
-//	return 0;
-//}
-//void reverse_str(char* str, int left, int right) {
-//	if (left < right) {
-//		char t = str[left];
-//		str[left] = str[right];
-//		str[right] = t;
-//		reverse_str(str, left + 1, right - 1);
-//	}
-//}
-////
-//int my_strlen(char* str) {
-//	if (*str != '\0') {
-//		return 1 + my_strlen(str+1);
-//	}
-//	else {
-//		return 0;
-//	}
-//}
+int my_strlen(char* str) {
+	if (*str != '\0') {
+		return 1 + my_strlen(str+1);
+	}
+	else {
+		return 0;
+	}
+}
