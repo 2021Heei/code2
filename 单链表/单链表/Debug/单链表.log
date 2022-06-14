@@ -1,0 +1,5 @@
+﻿  test.c
+C:\Users\未禾\source\repos\单链表\单链表\test.c(25,9): warning C4101: “e”: 未引用的局部变量
+C:\Users\未禾\source\repos\单链表\单链表\test.c(25,6): warning C4101: “i”: 未引用的局部变量
+C:\Users\未禾\source\repos\单链表\单链表\test.c(25,20): warning C4101: “n”: 未引用的局部变量
+  单链表.vcxproj -> C:\Users\未禾\source\repos\单链表\Debug\单链表.exe
