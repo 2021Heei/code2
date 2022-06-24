@@ -1,0 +1,4 @@
+﻿  test_1.c
+C:\C语言\codepush\coderode2\code-path-2\2022_6_23_2\2022_6_23_2\test_1.c(57,1): warning C4090: “初始化”: 不同的“const”限定符
+C:\C语言\codepush\coderode2\code-path-2\2022_6_23_2\2022_6_23_2\test_1.c(58,1): warning C4090: “初始化”: 不同的“const”限定符
+  2022_6_23_2.vcxproj -> C:\C语言\codepush\coderode2\code-path-2\2022_6_23_2\Debug\2022_6_23_2.exe
