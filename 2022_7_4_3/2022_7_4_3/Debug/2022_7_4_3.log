@@ -1,0 +1,4 @@
+﻿  test_1.c
+C:\C语言\codepush\coderode2\code-path-2\2022_7_4_3\2022_7_4_3\test_1.c(621,19): warning C4018: “<”: 有符号/无符号不匹配
+C:\C语言\codepush\coderode2\code-path-2\2022_7_4_3\2022_7_4_3\test_1.c(625,23): warning C4018: “<”: 有符号/无符号不匹配
+  2022_7_4_3.vcxproj -> C:\C语言\codepush\coderode2\code-path-2\2022_7_4_3\Debug\2022_7_4_3.exe
