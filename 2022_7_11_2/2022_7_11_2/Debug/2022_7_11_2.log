@@ -1,0 +1,7 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: 中间目录(Debug\)包含从另一个项目(2022_7_11_2.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+  contact.c
+C:\C语言\codepush\coderode2\code-path-2\2022_7_11_2\2022_7_11_2\contact.c(61,40): warning C4029: 声明的形参表不同于定义
+C:\C语言\codepush\coderode2\code-path-2\2022_7_11_2\2022_7_11_2\contact.c(200,7): warning C4013: “qsort”未定义；假设外部返回 int
+  test.c
+  正在生成代码...
+  2022_7_11_2.vcxproj -> C:\C语言\codepush\coderode2\code-path-2\2022_7_11_2\Debug\ConcactStatic.exe
