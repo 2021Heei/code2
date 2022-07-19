@@ -38,6 +38,8 @@ typedef struct Contact {
 //初始化
 int InitContact(Contact* Peo);
 
+//加载联系人信息
+void LoadContact(Contact* Peo);
 //菜单
 void menu();
 
@@ -51,7 +53,7 @@ void print_Peo(Contact* Peo, int i);
 void DisplayContact(const Contact* Peo);
 
 //名字查找
-int CheckContact_by_name(Contact* Peo, char* pname);
+int CheckContact_by_name(Contact* Peo);
 
 //电话查找
 int CheckContact_by_tele(Contact* Peo);
@@ -67,6 +69,9 @@ void ModifyContact(Contact* Peo);
 
 //排序
 void sort(Contact* Peo);
+
+//保存通讯录信息
+void SaveContact(Contact* Peo);
 
 //销毁通讯录
 void DestroyContact(Contact* Peo);

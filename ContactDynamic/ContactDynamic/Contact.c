@@ -1,6 +1,45 @@
 #include "contact.h"
 //函数定义
 
+//扩容
+void CheckCapacityContact(Contact* Peo) {
+	assert(Peo != NULL);
+	if (Peo->count == Peo->capacity) {
+		//扩容时是  以前的容量  加上  新增的容量
+		PeoInfo* p = (PeoInfo*)realloc(Peo->peo, sizeof(PeoInfo) * (Peo->capacity + CAPACITY_ADD));
+		if (p == NULL) {
+			//扩容失败
+			printf("CheckCapacityContact%s", strerror(errno));
+		}
+		//成功
+		Peo->peo = p;
+		Peo->capacity += CAPACITY_ADD;
+		printf("扩容成功\n");
+	}
+}
+
+//加载联系人信息
+void LoadContact(Contact* Peo) {
+	assert(Peo != NULL);
+	//打开文件
+	FILE* pf = fopen("Contact.txt", "rb");
+	//判断文件是否打开成功
+	if (pf == NULL) {
+		perror("LoadContact");
+		return;
+	}
+	//二进制形式读取文件信息
+	PeoInfo tmp = { 0 };
+	while (fread(&tmp, sizeof(PeoInfo), 1, pf) == 1) {
+		//判断是否增容
+		CheckCapacityContact(Peo);
+		Peo->peo[Peo->count] = tmp;
+		Peo->count++;
+	}
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+}
 //初始化结构体
 int InitContact(Contact* Peo) {
 	assert(Peo != NULL);
@@ -15,6 +54,9 @@ int InitContact(Contact* Peo) {
 	Peo->peo = p;
 	Peo->count = 0;
 	Peo->capacity = INIT_SZ;
+	//加载文件信息到通讯录
+	LoadContact(Peo);
+
 	return 0;
 }
 //菜单
@@ -27,27 +69,12 @@ void menu() {
 	printf("******************************\n");
 }
 
-//扩容
-void CapacityContact(Contact* Peo) {
-	assert(Peo != NULL);  
-	//扩容时是  以前的容量  加上  新增的容量
-	PeoInfo* p = (PeoInfo*)realloc(Peo->peo, sizeof(PeoInfo) * (Peo->capacity+CAPACITY_ADD));
-	if (p == NULL) {
-		//扩容失败
-		printf("CapacityContact%s", strerror(errno));
-	}
-	//成功
-	Peo->peo = p;
-	Peo->capacity += CAPACITY_ADD;
-	printf("扩容成功\n");
-}
 //增
 void AddContact(Contact* Peo) {
 	assert(Peo != NULL);
-	if (Peo->count == Peo->capacity) {
-		//扩充容量
-		CapacityContact(Peo);
-	}
+	//扩充容量
+	CheckCapacityContact(Peo);
+
 	printf("请输入联系人姓名>");
 	scanf("%s", Peo->peo[Peo->count].name);
 	printf("请输入联系人年龄>");
@@ -225,6 +252,27 @@ void sort(Contact* Peo) {
 	qsort(Peo, Peo->count, sizeof(Peo->peo[0]), cmp[input - 1]);
 	printf("排序成功!\n");
 }
+//保存通讯录信息
+void SaveContact(const Contact* Peo) {
+	assert(Peo != NULL);
+	//以只写的模式打开文件
+	FILE* pf = fopen("Contact.txt", "wb");
+	//判断文件是否打开成功
+	if (pf == NULL) {
+		perror("SaveContact");
+		return;
+	}
+	//二进制形式保存信息，写入到文件
+	int i = 0;
+	for (i = 0; i < Peo->count; i++) {
+		fwrite(Peo->peo + i, sizeof(PeoInfo), 1, pf);
+	}
+
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+}
+
 //销毁通讯录
 void DestroyContact(Contact* Peo) {
 	assert(Peo != NULL);

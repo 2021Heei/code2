@@ -1,2 +1,3 @@
-﻿  test_1.c
+﻿  Contact.c
+C:\C语言\codepush\coderode2\code-path-2\ContactDynamic\ContactDynamic\Contact.c(256,33): warning C4028: 形参 1 与声明不同
   ContactDynamic.vcxproj -> C:\C语言\codepush\coderode2\code-path-2\ContactDynamic\Debug\ContactDynamic.exe
